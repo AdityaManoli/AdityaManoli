@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 210" width="100%" height="210">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#080C14" />
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <pattern id="dotPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1E293B" />
+    </pattern>
+
+    <style>
+      .mono { font-family: "SF Mono", "JetBrains Mono", "Fira Code", Menlo, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      
+      @keyframes pulseDot {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+      .live-dot {
+        animation: pulseDot 2s ease-in-out infinite;
+        fill: #10B981;
+      }
+
+      @keyframes packetFlow {
+        0% { stroke-dashoffset: 60; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .packet-line {
+        stroke-dasharray: 4, 12;
+        animation: packetFlow 2s linear infinite;
+      }
+
+      .node-box {
+        fill: #111827;
+        stroke: #1F2937;
+        stroke-width: 1;
+      }
+      .node-text {
+        font-size: 9px;
+        fill: #9CA3AF;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <!-- Container -->
+  <rect width="840" height="210" rx="10" fill="url(#heroBg)" stroke="#1F2937" stroke-width="1" />
+  <rect width="840" height="210" rx="10" fill="url(#dotPattern)" opacity="0.6" />
+
+  <!-- Subtle accent line on top -->
+  <line x1="20" y1="1" x2="820" y2="1" stroke="url(#lineGrad)" stroke-width="2" />
+
+  <!-- LEFT: Identity & Status -->
+  <g transform="translate(36, 32)">
+    <!-- Status Pill -->
+    <rect x="0" y="0" width="232" height="24" rx="12" fill="#111827" stroke="#1F2937" stroke-width="1" />
+    <circle cx="12" cy="12" r="3.5" class="live-dot" />
+    <text x="24" y="16" class="mono" font-size="10" font-weight="600" fill="#E5E7EB" letter-spacing="0.3">
+      FOUNDING AI TEAM @ QUYNT
+    </text>
+
+    <!-- Name -->
+    <text x="0" y="66" class="sans" font-size="34" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">
+      Aditya Manoli
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="94" class="sans" font-size="14" font-weight="500" fill="#9CA3AF">
+      AI Engineer &amp; Systems Architect
+    </text>
+
+    <!-- Core Domains -->
+    <g transform="translate(0, 114)" class="mono" font-size="11">
+      <text x="0" y="0" fill="#60A5FA">Agentic Systems</text>
+      <text x="110" y="0" fill="#4B5563">&#183;</text>
+      <text x="122" y="0" fill="#60A5FA">Multimodal RAG</text>
+      <text x="224" y="0" fill="#4B5563">&#183;</text>
+      <text x="236" y="0" fill="#60A5FA">Low-Latency Backends</text>
+    </g>
+
+    <!-- Location & Education tag -->
+    <g transform="translate(0, 142)" class="sans" font-size="11" fill="#6B7280">
+      <text x="0" y="0">Belagavi, Karnataka &#8226; KLS Gogte Institute of Technology (CGPA: 9.0+)</text>
+    </g>
+  </g>
+
+  <!-- RIGHT: System Architecture Flow Telemetry -->
+  <g transform="translate(480, 24)">
+    <!-- Diagram Card Container -->
+    <rect x="0" y="0" width="324" height="162" rx="8" fill="#0D1117" stroke="#1F2937" stroke-width="1" />
+    
+    <!-- Title -->
+    <text x="14" y="20" class="mono" font-size="9.5" font-weight="600" fill="#6B7280" letter-spacing="0.5">
+      PIPELINE ARCHITECTURE
+    </text>
+    <circle cx="304" cy="16" r="3" fill="#10B981" />
+
+    <!-- Connecting Wires -->
+    <!-- Input to Router -->
+    <line x1="52" y1="80" x2="80" y2="80" stroke="#374151" stroke-width="1.5" />
+    <line x1="52" y1="80" x2="80" y2="80" stroke="#60A5FA" stroke-width="1.5" class="packet-line" />
+
+    <!-- Router to Upper (RAG) -->
+    <path d="M 124 74 L 140 52 L 158 52" fill="none" stroke="#374151" stroke-width="1.5" />
+    <path d="M 124 74 L 140 52 L 158 52" fill="none" stroke="#A78BFA" stroke-width="1.5" class="packet-line" />
+
+    <!-- Router to Lower (CV) -->
+    <path d="M 124 86 L 140 108 L 158 108" fill="none" stroke="#374151" stroke-width="1.5" />
+    <path d="M 124 86 L 140 108 L 158 108" fill="none" stroke="#34D399" stroke-width="1.5" class="packet-line" />
+
+    <!-- Upper to Engine -->
+    <path d="M 218 52 L 236 52 L 248 74" fill="none" stroke="#374151" stroke-width="1.5" />
+    <path d="M 218 52 L 236 52 L 248 74" fill="none" stroke="#A78BFA" stroke-width="1.5" class="packet-line" />
+
+    <!-- Lower to Engine -->
+    <path d="M 218 108 L 236 108 L 248 86" fill="none" stroke="#374151" stroke-width="1.5" />
+    <path d="M 218 108 L 236 108 L 248 86" fill="none" stroke="#34D399" stroke-width="1.5" class="packet-line" />
+
+    <!-- Engine to Output -->
+    <line x1="292" y1="80" x2="310" y2="80" stroke="#374151" stroke-width="1.5" />
+    <line x1="292" y1="80" x2="310" y2="80" stroke="#60A5FA" stroke-width="1.5" class="packet-line" />
+
+    <!-- Nodes -->
+    <!-- Node: Input -->
+    <rect x="10" y="68" width="42" height="24" rx="4" class="node-box" />
+    <text x="31" y="83" class="mono node-text">Query</text>
+
+    <!-- Node: Router -->
+    <rect x="80" y="68" width="44" height="24" rx="4" class="node-box" stroke="#2563EB" stroke-width="1" />
+    <text x="102" y="83" class="mono node-text" fill="#93C5FD">Router</text>
+
+    <!-- Node: RAG Vector Search -->
+    <rect x="158" y="40" width="60" height="24" rx="4" class="node-box" stroke="#7C3AED" stroke-width="1" />
+    <text x="188" y="55" class="mono node-text" fill="#C4B5FD">ChromaDB</text>
+
+    <!-- Node: CV Engine -->
+    <rect x="158" y="96" width="60" height="24" rx="4" class="node-box" stroke="#059669" stroke-width="1" />
+    <text x="188" y="111" class="mono node-text" fill="#6EE7B7">30fps CV</text>
+
+    <!-- Node: Inference Engine -->
+    <rect x="248" y="68" width="44" height="24" rx="4" class="node-box" stroke="#D97706" stroke-width="1" />
+    <text x="270" y="83" class="mono node-text" fill="#FCD34D">FastAPI</text>
+
+    <!-- Telemetry Footer in Card -->
+    <line x1="0" y1="134" x2="324" y2="134" stroke="#1F2937" stroke-width="1" />
+    <text x="14" y="150" class="mono" font-size="9" fill="#4B5563">
+      LATENCY: <tspan fill="#34D399">-40%</tspan> &#160;|&#160; ACCURACY: <tspan fill="#60A5FA">85%</tspan> &#160;|&#160; STREAM: <tspan fill="#A78BFA">30 FPS</tspan>
+    </text>
+  </g>
+</svg>
